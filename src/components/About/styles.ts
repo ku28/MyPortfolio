@@ -43,19 +43,18 @@ export const Container = styled.section`
     font-weight: 500;
   }
   
-  
-
   .about-image{
     text-align: center;
-   img{
-     margin-top: 2rem;
-     width: 75%;
-     filter: grayscale(0);
-     transition: filter 0.5s;
-     &:hover{
-       filter: grayscale(0);
-     }
-   }
+    img{
+      margin-top: 2rem;
+      width: 50%; /* Decreased the size of the image */
+      filter: grayscale(0);
+      transition: filter 0.5s;
+      border-radius: 50%;
+      &:hover{
+        filter: grayscale(0);
+      }
+    }
   }
 
   @media only screen and (max-width: 480px) {
@@ -64,12 +63,14 @@ export const Container = styled.section`
       margin-top: 4rem;
       img{
         margin-top: 2rem;
-        width: 100%;
+        width: 75%; /* Decreased the size of the image */
         filter: grayscale(0);
         transition: filter 0.5s;
+        border-radius: 50%;
         &:hover{
           filter: grayscale(0);
         }
+      }
     }
   }
 
@@ -85,15 +86,14 @@ export const Container = styled.section`
       max-width: 100%;
       img{
         margin-top: 2rem;
-        width: 100%;
+        width: 75%; /* Decreased the size of the image */
         filter: grayscale(0);
         transition: filter 0.5s;
+        border-radius: 50%;
         &:hover{
           filter: grayscale(0);
         }
+      }
     }
-    
-    
   }
-
 `
