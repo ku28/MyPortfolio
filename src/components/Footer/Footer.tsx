@@ -5,9 +5,9 @@ import githubIcon from '../../assets/github.svg'
 export function Footer() {
   return (
     <Container className="footer">
-      <a href="https://kushagraJuneja.in" className="logo">
+      <a href="https://kushagrajuneja.vercel.app/" className="logo">
         <span>www.kushagra</span>
-        <span>Juneja.in</span>
+        <span>juneja.in</span>
       </a>
       <div className="social-media">
         <a
