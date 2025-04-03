@@ -1,4 +1,5 @@
 import { Container } from "./styles";
+import image1 from "../../assets/me.jpg";
 
 export function About() {
   const skills = [
@@ -37,7 +38,7 @@ export function About() {
         </div>
       </div>
       <div className="about-image">
-        <img src="https://media.licdn.com/dms/image/v2/D5603AQGkRu2THUn5vg/profile-displayphoto-shrink_400_400/B56ZPvqDNiG8Ag-/0/1734892599867?e=1741219200&v=beta&t=WzC8kzWBzg-FCXIHzv32k669KpkBTXH0XYfNILwBN9o" alt="Kushagra Juneja" />
+        <img src={image1} alt="Kushagra Juneja" />
       </div>
     </Container>
   );
