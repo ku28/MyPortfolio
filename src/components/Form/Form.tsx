@@ -1,8 +1,7 @@
 import { Container, ContainerSucces } from './styles'
 import { toast, ToastContainer } from 'react-toastify'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import validator from 'validator'
-import emailjs from '@emailjs/browser'
 
 export function Form() {
   const [validEmail, setValidEmail] = useState(false)
@@ -24,28 +23,35 @@ export function Form() {
     setIsSubmitting(true)
 
     try {
-      // EmailJS configuration
-      const serviceId = 'YOUR_SERVICE_ID' // Replace with your EmailJS service ID
-      const templateId = 'YOUR_TEMPLATE_ID' // Replace with your EmailJS template ID
-      const publicKey = 'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-
-      const templateParams = {
-        from_email: email,
-        to_email: 'kushagrajuneja7@gmail.com',
-        subject: 'Portfolio Enquiry',
-        message: message,
-      }
-
-      await emailjs.send(serviceId, templateId, templateParams, publicKey)
-      
-      setIsSuccess(true)
-      toast.success('Email successfully sent!', {
-        position: "bottom-left",
-        pauseOnFocusLoss: false,
-        closeOnClick: true,
-        hideProgressBar: false,
-        toastId: 'succeeded',
+      // Use relative path for production (Vercel), localhost for development
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000'
+      const response = await fetch(`${apiUrl}/api/send-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          message,
+        }),
       })
+
+      const data = await response.json()
+
+      if (response.ok && data.success) {
+        setIsSuccess(true)
+        setEmail('')
+        setMessage('')
+        toast.success('Email successfully sent!', {
+          position: "bottom-left",
+          pauseOnFocusLoss: false,
+          closeOnClick: true,
+          hideProgressBar: false,
+          toastId: 'succeeded',
+        })
+      } else {
+        throw new Error(data.message || 'Failed to send email')
+      }
     } catch (error) {
       console.error('Email send error:', error)
       toast.error('Failed to send email. Please try again.', {
@@ -66,6 +72,7 @@ export function Form() {
         <h3>Thanks for getting in touch!</h3>
         <button
           onClick={() => {
+            setIsSuccess(false)
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
