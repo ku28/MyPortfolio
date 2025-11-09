@@ -115,4 +115,28 @@ export const GlobalStyle = createGlobalStyle`
     //   color: var(--green);
     // }
   }
+
+  @media (max-width: 768px){
+    html{
+      font-size: 58%;
+    }
+  }
+
+  @media (max-width: 600px){
+    html{
+      font-size: 55%;
+    }
+  }
+
+  @media (max-width: 480px){
+    html{
+      font-size: 52%;
+    }
+  }
+
+  @media (max-width: 360px){
+    html{
+      font-size: 50%;
+    }
+  }
 `

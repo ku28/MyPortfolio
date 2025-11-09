@@ -55,8 +55,10 @@ export const Container = styled.section`
   @media(max-width: 960px){
     display: block;
     margin-top: 15%;
+    padding: 0 2rem;
+    gap: 4rem;
+    
     .hero-text{
-
       h1{
         font-size: 5rem;
       }
@@ -69,8 +71,69 @@ export const Container = styled.section`
 
   @media(max-width: 600px){
     margin-top: 35%;
+    padding: 0 1.5rem;
+    
+    .hero-text{
+      h1{
+        font-size: 4rem;
+      }
+      
+      h3{
+        font-size: 2rem;
+      }
+
+      p{
+        font-size: 1.6rem;
+      }
+
+      .button{
+        margin-top: 3rem;
+        padding: 1.2rem 4rem;
+        font-size: 1.4rem;
+      }
+    }
+
+    .social-media{
+      padding-top: 3rem;
+      gap: 0.8rem;
+      
+      img, span{
+        width: 3rem;
+      }
+    }
   }
+
   @media(max-width: 480px){
     margin-top: 45%;
+    
+    .hero-text{
+      h1{
+        font-size: 3.5rem;
+      }
+      
+      h3{
+        font-size: 1.8rem;
+      }
+
+      p{
+        font-size: 1.5rem;
+      }
+
+      p.small-resume{
+        margin-bottom: 3rem;
+      }
+
+      .button{
+        padding: 1rem 3rem;
+      }
+    }
+
+    .social-media{
+      padding-top: 2rem;
+      
+      img, span{
+        width: 2.5rem;
+      }
+    }
   }
 `

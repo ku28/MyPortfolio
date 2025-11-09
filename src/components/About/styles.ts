@@ -58,6 +58,33 @@ export const Container = styled.section`
   }
 
   @media only screen and (max-width: 480px) {
+    padding: 0 1.5rem;
+    
+    h2{
+      font-size: 2.5rem;
+    }
+
+    h3{
+      font-size: 2rem;
+    }
+
+    p{
+      font-size: 1.6rem;
+    }
+
+    .hard-skills{
+      gap: 1.5rem;
+    }
+
+    .hability{
+      img{
+        width: 3rem;
+      }
+      p{
+        font-size: 1.4rem;
+      }
+    }
+
     .about-image {
       max-width: 100%;
       margin-top: 4rem;
@@ -77,12 +104,22 @@ export const Container = styled.section`
   @media (max-width: 960px){
     display: block;
     text-align: center;
+    padding: 0 2rem;
+    
+    h2{
+      font-size: 3rem;
+    }
+
+    p{
+      font-size: 1.7rem;
+    }
     
     .hard-skills{
       justify-content: center;
     }
     .about-image{
       display: flex;
+      justify-content: center;
       max-width: 100%;
       img{
         margin-top: 2rem;
@@ -94,6 +131,14 @@ export const Container = styled.section`
           filter: grayscale(0);
         }
       }
+    }
+  }
+
+  @media (max-width: 600px){
+    padding: 0 1.5rem;
+    
+    h2{
+      font-size: 2.8rem;
     }
   }
 `

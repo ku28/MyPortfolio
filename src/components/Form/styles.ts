@@ -40,16 +40,54 @@ export const Container = styled.div`
     button{
       padding: 1rem 6rem;
       text-transform: uppercase;
+      position: relative;
+      transition: all 0.3s ease;
+
+      &:disabled{
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
+      &:not(:disabled):hover{
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(35, 206, 107, 0.3);
+      }
     }
   
   }
 
   @media (max-width: 740px){
+    padding: 0 2rem;
+    
     form{
       width: 100%;
       
       input,textarea{
         width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 480px){
+    padding: 0 1.5rem;
+    
+    h2{
+      font-size: 2.5rem;
+    }
+
+    form{
+      input, textarea{
+        padding: 0.8rem 1.5rem;
+        font-size: 1.4rem;
+      }
+
+      textarea{
+        height: 15rem;
+      }
+
+      button{
+        padding: 0.8rem 4rem;
+        font-size: 1.4rem;
       }
     }
   }

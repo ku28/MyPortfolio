@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@formspree/react": "^2.2.4",
+    "@emailjs/browser": "^4.4.1",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.1.0",
     "@testing-library/user-event": "14.5.2",
@@ -12,6 +12,10 @@
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
     "@vercel/analytics": "^1.4.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.10",
     "react": "^19.0.0",
     "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^19.0.0",
@@ -51,6 +55,9 @@
     ]
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/nodemailer": "^7.0.3",
     "@types/react-animate-on-scroll": "^2.1.5",
     "@types/react-google-recaptcha": "^2.1.2",
     "@types/react-router-hash-link": "^2.4.4",

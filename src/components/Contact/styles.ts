@@ -52,11 +52,65 @@ export const Container = styled.section`
 
 
   @media(max-width: 960px){
+    padding: 0 2rem;
+    
     .contacts{
       flex-direction: column;
       div{
         width: 100%;
+      }
+    }
+  }
+
+  @media(max-width: 600px){
+    padding: 0 1.5rem;
+    
+    header{
+      h2{
+        font-size: 3rem;
+      }
+
+      p{
+        font-size: 1.5rem;
+      }
+    }
+
+    .contacts{
+      div{
+        padding: 1.4rem 2rem;
         
+        img{
+          width: 3.5rem;
+        }
+
+        a{
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  @media(max-width: 480px){
+    header{
+      h2{
+        font-size: 2.5rem;
+      }
+    }
+
+    .contacts{
+      gap: 1.5rem;
+      
+      div{
+        padding: 1.2rem 1.5rem;
+        gap: 1.5rem;
+        
+        img{
+          width: 3rem;
+        }
+
+        a{
+          font-size: 1.3rem;
+        }
       }
     }
   }

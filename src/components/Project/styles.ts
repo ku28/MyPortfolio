@@ -81,12 +81,69 @@ export const Container = styled.section`
   @media (max-width: 960px){
     .projects{
       grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    h2{
+      font-size: 3.5rem;
     }
   }
 
   @media (max-width: 740px){
+    padding: 0 2rem;
+    
     .projects{
       grid-template-columns: 1fr;
+      padding: 0;
+    }
+
+    h2{
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 480px){
+    padding: 0 1.5rem;
+    
+    h2{
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .projects{
+      .project{
+        padding: 1.5rem 1.5rem;
+
+        header{
+          margin-bottom: 2rem;
+          
+          svg{
+            width: 40px;
+          }
+
+          a > img {
+            width: 4rem;
+          }
+        }
+
+        h3{
+          font-size: 2rem;
+          margin-bottom: 1.5rem;
+        }
+
+        p{
+          font-size: 1.4rem;
+          margin-bottom: 1.5rem;
+        }
+
+        footer{
+          .tech-list{
+            gap: 1rem;
+            font-size: 1.2rem;
+            flex-wrap: wrap;
+          }
+        }
+      }
     }
   }
 `

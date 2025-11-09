@@ -181,5 +181,32 @@ export const Container = styled.header`
       }
     }
   }
+
+  @media (max-width: 600px){
+    padding: 1.5rem 2rem;
+    
+    .logo{
+      font-size: 2rem;
+    }
+
+    label {
+      width: 45px;
+      height: 25px;
+    }
+
+    label:after {
+      width: 18px;
+      height: 18px;
+      top: 3.5px;
+    }
+  }
+
+  @media (max-width: 480px){
+    padding: 1.2rem 1.5rem;
+    
+    .logo{
+      font-size: 1.8rem;
+    }
+  }
   
 `

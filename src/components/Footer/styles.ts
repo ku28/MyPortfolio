@@ -52,10 +52,40 @@ export const Container = styled.footer`
     gap: 2rem;
     text-align: center;
   }
+
   @media(max-width: 600px){
-    padding: 4rem 1rem;
+    padding: 4rem 2rem;
+    
+    .logo{
+      font-size: 2.2rem;
+    }
+    
+    p{
+      font-size: 1.4rem;
+      
+      img{
+        width: 2.2rem;
+      }
+    }
+
+    .social-media{
+      img, span{
+        width: 2.5rem;
+      }
+    }
+  }
+
+  @media(max-width: 480px){
+    padding: 3rem 1.5rem;
+    
+    .logo{
+      font-size: 2rem;
+    }
+    
     p{
       font-size: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 `
