@@ -23,8 +23,11 @@ export function Form() {
     setIsSubmitting(true)
 
     try {
-      // Use relative path for production (Vercel), localhost for development
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000'
+      // In production (Vercel), use relative path to serverless function
+      // In development, use localhost backend
+      const isDevelopment = window.location.hostname === 'localhost'
+      const apiUrl = isDevelopment ? 'http://localhost:5000' : ''
+      
       const response = await fetch(`${apiUrl}/api/send-email`, {
         method: 'POST',
         headers: {
