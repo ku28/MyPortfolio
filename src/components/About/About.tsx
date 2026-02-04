@@ -22,7 +22,7 @@ export function About() {
       <div className="about-text">
         <h2>About me</h2>
         <p>
-          - A 3rd-year Computer Science Engineering student with a strong foundation in web development and software engineering. <br /><br />
+          - A Computer Science Engineering Graduate with a strong foundation in web development and software engineering. <br /><br />
           - Passionate about crafting user-friendly applications and exploring innovative technologies in the software domain. <br /><br />
           - Skilled in modern web technologies like Next.js, React.js, PostgreSQL, and JWT authentication. <br /><br />
           - Experienced in project management using Jira, focusing on effective collaboration and agile methodologies. <br /><br />
