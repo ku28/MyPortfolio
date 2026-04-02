@@ -58,7 +58,7 @@ export function FeaturedProject() {
 
             <div className="cta-buttons">
               <a
-                href="https://github.com/ku28"
+                href="https://erpflowstudios.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-primary"
