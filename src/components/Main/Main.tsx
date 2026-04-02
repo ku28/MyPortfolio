@@ -2,6 +2,7 @@ import Particles from "react-tsparticles"
 import { Container } from "./styles";
 import { Hero } from "../Hero/Hero";
 import { About } from "../About/About";
+import { FeaturedProject } from "../FeaturedProject/FeaturedProject";
 import { Contact } from "../Contact/Contact";
 import { Project } from "../Project/Project";
 
@@ -178,6 +179,7 @@ export function Main() {
       />
       <Hero></Hero>
       <About></About>
+      <FeaturedProject />
       <Project></Project>
       <Contact></Contact>
     </Container>

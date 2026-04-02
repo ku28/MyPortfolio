@@ -5,10 +5,19 @@ import githubIcon from '../../assets/github.svg'
 export function Footer() {
   return (
     <Container className="footer">
-      <a href="https://kushagrajuneja.vercel.app/" className="logo">
-        <span>www.kushagra</span>
-        <span>juneja.in</span>
-      </a>
+      <div className="footer-brand">
+        <a href="https://kushagrajuneja.dev/" className="logo">
+          <span className="logo-bracket">{'<'}</span>
+          <span className="logo-name">KJ</span>
+          <span className="logo-bracket">{' />'}</span>
+        </a>
+        <p className="footer-tagline">Designed & Built by Kushagra Juneja</p>
+      </div>
+      <div className="footer-tech">
+        <span className="tech-badge">
+          Built with <strong>React</strong> & <strong>TypeScript</strong>
+        </span>
+      </div>
       <div className="social-media">
         <a
           href="https://www.linkedin.com/in/kush-juneja/"

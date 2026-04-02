@@ -1,45 +1,90 @@
 import { Container } from "./styles";
+import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
 import image1 from "../../assets/me.jpg";
 
 export function About() {
-  const skills = [
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", alt: "Java" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg", alt: "C++" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", alt: "JavaScript" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", alt: "Python" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", alt: "Node.js" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg", alt: "Next.js" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", alt: "PostgreSQL" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", alt: "MongoDB" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg", alt: "Netlify" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg", alt: "Prisma" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg", alt: "Jira" },
+  const skillCategories = [
+    {
+      label: "Languages",
+      skills: [
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", name: "Java" },
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg", name: "C++" },
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", name: "JavaScript" },
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", name: "Python" },
+      ],
+    },
+    {
+      label: "Frontend",
+      skills: [
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", name: "React" },
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg", name: "Next.js" },
+      ],
+    },
+    {
+      label: "Backend & DB",
+      skills: [
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", name: "Node.js" },
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", name: "PostgreSQL" },
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", name: "MongoDB" },
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg", name: "Prisma" },
+      ],
+    },
+    {
+      label: "Tools",
+      skills: [
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg", name: "Netlify" },
+        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg", name: "Jira" },
+      ],
+    },
   ];
 
   return (
-    <Container id="about">
-      <div className="about-text">
-        <h2>About me</h2>
-        <p>
-          - A Computer Science Engineering Graduate with a strong foundation in web development and software engineering. <br /><br />
-          - Passionate about crafting user-friendly applications and exploring innovative technologies in the software domain. <br /><br />
-          - Skilled in modern web technologies like Next.js, React.js, PostgreSQL, and JWT authentication. <br /><br />
-          - Experienced in project management using Jira, focusing on effective collaboration and agile methodologies. <br /><br />
-          - Active participant in hackathons and seminars, constantly learning and applying new trends in technology.
-        </p>
-        <h3>Here are my main skills:</h3>
-        <div className="hard-skills">
-          {skills.map((skill, index) => (
-            <div className="hability" key={index}>
-              <img src={skill.src} alt={skill.alt} width="40" height="40" />
+    <SectionWrapper>
+      <Container id="about">
+        <div className="about-text">
+          <div className="section-label">
+            <span className="label-line" />
+            <span className="label-text">{'// about_me'}</span>
+          </div>
+          <h2>About Me</h2>
+          <div className="about-description">
+            <p>
+              I'm a Computer Science Engineering student with hands-on experience in 
+              building full-stack and desktop applications. I enjoy solving real-world 
+              problems by designing systems that are scalable, maintainable, and user-focused.
+            </p>
+            <p>
+              My work spans across web platforms, desktop applications, and backend systems, 
+              where I focus on writing clean code, implementing secure authentication, and 
+              delivering smooth user experiences.
+            </p>
+          </div>
+
+          <div className="skills-section">
+            <h3>{'<'} Tech Stack {'/>'}</h3>
+            <div className="skill-categories">
+              {skillCategories.map((category, catIndex) => (
+                <div className="skill-category" key={catIndex}>
+                  <span className="category-label">{category.label}</span>
+                  <div className="skill-items">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div className="skill-badge" key={skillIndex}>
+                        <img src={skill.src} alt={skill.name} width="24" height="24" />
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-      <div className="about-image">
-        <img src={image1} alt="Kushagra Juneja" />
-      </div>
-    </Container>
+        <div className="about-image">
+          <div className="image-frame">
+            <img src={image1} alt="Kushagra Juneja" />
+          </div>
+        </div>
+      </Container>
+    </SectionWrapper>
   );
 }

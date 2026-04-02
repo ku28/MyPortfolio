@@ -16,8 +16,9 @@ export function Header() {
     <Container className="header-fixed">
       <Router>
         <HashLink smooth to="#home" className="logo">
-          <span>{"<Kushagra "}</span>
-          <span>{" Juneja/>"}</span>
+          <span className="logo-bracket">{'<'}</span>
+          <span className="logo-name">KJ</span>
+          <span className="logo-bracket">{' />'}</span>
         </HashLink>
         <input
           onChange={toggleTheme}
@@ -32,22 +33,22 @@ export function Header() {
             Home
           </NavHashLink>
           <NavHashLink smooth to="#about" onClick={closeMenu}>
-            About me
+            About
           </NavHashLink>
           <NavHashLink smooth to="#project" onClick={closeMenu}>
-            Project
+            Projects
           </NavHashLink>
           <NavHashLink smooth to="#contact" onClick={closeMenu}>
             Contact
           </NavHashLink>
-          <a href="/CV_Kushagra.pdf" target="_blank" rel="noreferrer" className="button">
+          <a href="/CV_Kushagra.pdf" target="_blank" rel="noreferrer" className="button resume-btn">
             Resume
           </a>
         </nav>
         <div
           aria-expanded={isActive ? 'true' : 'false'}
           aria-haspopup="true"
-          aria-label={isActive ? 'Fechar menu' : 'Abrir menu'}
+          aria-label={isActive ? 'Close menu' : 'Open menu'}
           className={isActive ? 'menu active' : 'menu'}
           onClick={() => {
             setActive(!isActive)

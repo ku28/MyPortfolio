@@ -1,80 +1,110 @@
 import styled from "styled-components";
 
-
 export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem 10rem;
-  
-  background-color: #21212150;
-  
-  backdrop-filter: blur(6px);
-
+  padding: 1.6rem 10rem;
+  background: rgba(10, 10, 15, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   z-index: 1000;
 
-  nav{
+  .logo {
+    font-family: var(--font-mono);
+    font-size: 2.2rem;
+    font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 1.8rem;
-    a{
-      color: #FFFF;
-      padding: 0.6rem;
-      font-family: 'Red Hat Display', sans-serif;
-      font-weight: 500;
-      text-transform: uppercase;
-      transition: filter 0.25s;
+    gap: 0;
+    transition: opacity 0.3s ease;
 
-      &.button{
-        padding: 0.6rem 2rem;
-      }
-
-      &:hover{
-        filter: brightness(0.6);
-      }
+    &:hover {
+      opacity: 0.8;
     }
 
+    .logo-bracket {
+      color: var(--text-muted);
+    }
+
+    .logo-name {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
   }
 
-  .menu-container{
-    cursor: pointer;
-    padding: 0.6rem 0;
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    a {
+      color: var(--text-secondary);
+      padding: 0.6rem 1.4rem;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 1.4rem;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      transition: color 0.25s ease, background 0.25s ease;
+      border-radius: var(--radius-sm);
+      position: relative;
+
+      &:hover {
+        color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      &.resume-btn {
+        padding: 0.7rem 2rem;
+        color: #fff;
+        background: var(--gradient-primary);
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-left: 0.8rem;
+        border-radius: var(--radius-sm);
+        box-shadow: 0 2px 12px rgba(124, 58, 237, 0.25);
+
+        &:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+          background: var(--gradient-primary);
+          filter: brightness(1.1);
+        }
+      }
+    }
   }
 
-  .menu{
+  .menu {
     width: 2rem;
     height: 0.2rem;
-    background: #FFFF;
+    background: var(--text-secondary);
     position: relative;
     cursor: pointer;
     display: none;
+    transition: 0.3s;
 
-    &:before{
-      bottom: 0.5rem;
-    }
-    &:after{
-      top: 0.5rem;
-    }
+    &:before { bottom: 0.6rem; }
+    &:after { top: 0.6rem; }
 
-
-    &.active:before{
+    &.active:before {
       bottom: 0;
       transform: rotate(45deg);
     }
-
-    &.active:after{
+    &.active:after {
       top: 0;
       transform: rotate(135deg);
     }
-
-    &.active{
+    &.active {
       background-color: rgba(0, 0, 0, 0);
     }
-
   }
 
   .menu:before, .menu:after {
@@ -83,11 +113,10 @@ export const Container = styled.header`
     position: absolute;
     width: 100%;
     height: 0.2rem;
-    background: #FFFF;
+    background: var(--text-secondary);
     cursor: pointer;
-    transition: .6s;
+    transition: 0.4s;
   }
-
 
   input[type=checkbox] {
     height: 0;
@@ -99,64 +128,48 @@ export const Container = styled.header`
   label {
     cursor: pointer;
     text-indent: -9999px;
-    width: 55px;
-    height: 30px;
-    background: var(--green);
+    width: 48px;
+    height: 26px;
+    background: rgba(255, 255, 255, 0.1);
     display: block;
-    justify-content: center;
-    align-items: center;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
     border-radius: 100px;
     position: relative;
     margin-left: auto;
     right: 10px;
-  }
-
-  @media only screen and (max-width: 800px) {
-    label {
-    position: relative;
-   }
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
   }
 
   label:after {
     content: '';
     background: #FFF;
-    width: 20px;
-    height: 20px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     position: absolute;
-    top: 5px;
+    top: 3px;
     left: 4px;
-   transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+    transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   }
 
   input:checked + label {
-    background: var(--pink);
+    background: var(--gradient-primary);
+    border-color: transparent;
   }
 
   input:checked + label:after {
-    left: calc(100% - 5px);
-    -webkit-transform: translateX(-100%);
-    -moz-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    -o-transform: translateX(-100%);
+    left: calc(100% - 4px);
     transform: translateX(-100%);
   }
 
-  @media (max-width: 960px){
-    padding: 1.8rem 3rem;
+  @media (max-width: 960px) {
+    padding: 1.6rem 3rem;
 
-    .menu{
+    .menu {
       display: block;
     }
 
     nav {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-      overflow: hidden;
       opacity: 0;
       visibility: hidden;
       flex-direction: column;
@@ -165,48 +178,60 @@ export const Container = styled.header`
       position: fixed;
       width: 100vw;
       height: 100vh;
-      background: var(--blue);
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(30px);
       top: 0;
       left: 0;
-      transition: opacity 0.25s;
-      background-color: var(--green);
+      transition: opacity 0.3s ease;
+      gap: 2rem;
 
-      a.button{
-        background-color: var(--pink);
+      a {
+        font-size: 2rem;
+        color: var(--text-secondary);
+
+        &:hover {
+          color: var(--text-primary);
+        }
       }
 
-      &.active{
+      a.resume-btn {
+        margin-left: 0;
+        margin-top: 1rem;
+        padding: 1rem 3rem;
+        font-size: 1.6rem;
+      }
+
+      &.active {
         opacity: 1;
         visibility: visible;
       }
     }
   }
 
-  @media (max-width: 600px){
-    padding: 1.5rem 2rem;
-    
-    .logo{
-      font-size: 2rem;
+  @media (max-width: 600px) {
+    padding: 1.4rem 2rem;
+
+    .logo {
+      font-size: 1.8rem;
     }
 
     label {
-      width: 45px;
-      height: 25px;
+      width: 42px;
+      height: 22px;
     }
 
     label:after {
-      width: 18px;
-      height: 18px;
-      top: 3.5px;
+      width: 16px;
+      height: 16px;
+      top: 2px;
     }
   }
 
-  @media (max-width: 480px){
+  @media (max-width: 480px) {
     padding: 1.2rem 1.5rem;
-    
-    .logo{
-      font-size: 1.8rem;
+
+    .logo {
+      font-size: 1.6rem;
     }
   }
-  
 `
